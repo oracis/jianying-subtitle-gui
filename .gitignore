@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# PyInstaller 构建产物
+build/
+build_diag/
+dist/
+dist_*/
+*.spec.bak
+
+# 模型与缓存（运行时下载到 %LOCALAPPDATA%，不随仓库分发）
+models/
+*.bin
+*.onnx
+
+# 临时音频/调试
+*.wav
+*.m4a
+*.mp3
+*.mp4
+tools/tmp_*
+*.log
+
+# 编辑器/系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
