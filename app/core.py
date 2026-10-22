@@ -80,6 +80,11 @@ def run(media_path, cfg, progress_cb=None, cancel_flag=None,
 
     # ---------- 1. 模型按需下载 ----------
     size = cfg.get("model_size", "base")
+    # 防御：旧配置里可能残留已下架的档位（tiny/medium/large-v3），
+    # 直接拿来用会静默下载 1.5GB+ 并跑几十分钟，这里统一回退到 base。
+    if size not in model_manager.MODEL_INFO:
+        P("model", 0, 0, f"配置档位 {size!r} 已下架，自动回退 base")
+        size = "base"
     t0 = time.time()
     if model_dir_override and model_manager.is_ready(size, None):
         model_dir = model_manager.model_dir(size)

@@ -272,7 +272,7 @@ dist/JianyingSubtitleGUI/          281 MB
 ├── selftest.log         自检结果
 ├── convert.log          CLI 转换日志
 └── models\
-    └── faster-whisper-<tiny|base|small|medium|large-v3>\
+    └── faster-whisper-<base|small>\
         ├── config.json
         ├── model.bin
         ├── tokenizer.json
